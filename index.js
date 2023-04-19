@@ -2,7 +2,7 @@ const express =require("express")
 const app =express()
 const dotenv=require("dotenv")
 const mongoose=require("mongoose")
-// const {MongoClient}=require('mongodb')
+
 const authRoute=require("./routes/auth")
 const userRoute = require("./routes/users");
 const postRoute = require("./routes/posts");
@@ -17,7 +17,7 @@ app.use("/images", express.static(path.join(__dirname, "/images")))
 app.use( express.static(path.join(__dirname, "./frontend/build")))
 
 
-// const uri = "mongodb+srv://pulkit:123@cluster0.xofh23l.mongodb.net/new?retryWrites=true&w=majority";
+
 
 app.get("*",function(req,res){
   res.sendFile(path.join(__dirname,"./frontend/build/index.html"))
@@ -26,13 +26,6 @@ app.get("*",function(req,res){
 
 
 
-
-
-// MongoClient.connect(uri,{
-
-// }).then(console.log("connected to database")).catch((err)=>{
-//   console.log((err))
-// })
 
 
 
@@ -92,7 +85,7 @@ app.use("/backend/posts", postRoute);
  app.use("/backend/categories", categoryRoute);
 
 
-app.listen("5002",()=>{
+app.listen("5000",()=>{
 
      console.log("backend is running")
 })
