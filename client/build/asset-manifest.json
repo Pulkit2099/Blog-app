@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/static/css/main.e126c0fd.css",
+    "main.js": "/static/js/main.9f0460a2.js",
+    "static/media/what_is_a_blog_used_for-f_mobile.png": "/static/media/what_is_a_blog_used_for-f_mobile.3d3da2e9231649ec4fed.png",
+    "index.html": "/index.html",
+    "main.e126c0fd.css.map": "/static/css/main.e126c0fd.css.map",
+    "main.9f0460a2.js.map": "/static/js/main.9f0460a2.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e126c0fd.css",
+    "static/js/main.9f0460a2.js"
+  ]
+}
