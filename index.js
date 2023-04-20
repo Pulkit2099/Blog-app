@@ -11,12 +11,12 @@ const path=require("path")
 const port =process.env.port||5000
 const cors=require('cors')
 
-const corsOrigin ={
-  origin:'http://localhost:3000', //or whatever port your frontend is using
-  credentials:true,            
-  optionSuccessStatus:200
-}
-app.use(cors(corsOrigin));
+// const corsOrigin ={
+//   origin:'http://localhost:3000', //or whatever port your frontend is using
+//   credentials:true,            
+//   optionSuccessStatus:200
+// }
+// app.use(cors(corsOrigin));
 
 
 dotenv.config()
