@@ -86,9 +86,9 @@ console.log("this is main url")
 
 })
 //using authroutes file
-app.use("/backend/auth",authRoute)
+app.use("/auth",authRoute)
 //using userroute file
-app.use("/backend/users",userRoute)
+app.use("/users",userRoute)
 
 
 app.use("/backend/posts", postRoute);
