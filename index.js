@@ -15,8 +15,15 @@ const port =process.env.port||5000
 
 dotenv.config()
 app.use(express.json())
-app.use(cors())
+// app.use(cors())
 
+app.use(
+  cors({
+    origin: [process.env.FRONTEND_URL],
+    methods: ["GET", "POST", "PUT", "DELETE"],
+    credentials: false,
+  })
+);
 app.use("/images", express.static(path.join(__dirname, "/images")))
 
 
@@ -80,9 +87,9 @@ console.log("this is main url")
 
 })
 //using authroutes file
-app.use("/auth",authRoute)
+app.use("/backend/auth",authRoute)
 //using userroute file
-app.use("/users",userRoute)
+app.use("/backend/users",userRoute)
 
 
 app.use("/backend/posts", postRoute);
