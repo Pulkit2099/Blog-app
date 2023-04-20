@@ -19,7 +19,7 @@ app.use(express.json())
 
 app.use(
   cors({
-   // origin: [process.env.FRONTEND_URL],
+   origin: "http://localhost:3001",
     methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: false,
   })
@@ -30,9 +30,9 @@ app.use("/images", express.static(path.join(__dirname, "/images")))
 
 
 
-app.get("*",function(req,res){
-  res.sendFile(path.join(__dirname,"./frontend/build/index.html"))
-})
+// app.get("*",function(req,res){
+//   res.sendFile(path.join(__dirname,"./frontend/build/index.html"))
+// })
 
 
 
