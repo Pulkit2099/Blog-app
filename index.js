@@ -23,6 +23,7 @@ dotenv.config()
 app.use(express.json())
 // app.use(cors())
 
+<<<<<<< HEAD
 // app.use(
 //   cors({
 //     origin: [process.env.FRONTEND_URL],
@@ -30,15 +31,24 @@ app.use(express.json())
 //     credentials: false,
 //   })
 // );
+=======
+app.use(
+  cors({
+   origin: "http://localhost:3001",
+    methods: ["GET", "POST", "PUT", "DELETE"],
+    credentials: false,
+  })
+);
+>>>>>>> 75eaf69aeee401e7d31e4b9167376bbbe2af172a
 app.use("/images", express.static(path.join(__dirname, "/images")))
 
 
 
 
 
-app.get("*",function(req,res){
-  res.sendFile(path.join(__dirname,"./frontend/build/index.html"))
-})
+// app.get("*",function(req,res){
+//   res.sendFile(path.join(__dirname,"./frontend/build/index.html"))
+// })
 
 
 
