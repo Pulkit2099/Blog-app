@@ -10,11 +10,18 @@ const postRoute = require("./routes/posts");
 const categoryRoute = require("./routes/categories");
 const multer =require("multer")
 const path=require("path")
+const port =process.env.port||5000
+
 
 dotenv.config()
 app.use(express.json())
-app.use(cors())
-
+app.use(
+  cors({
+    origin:[process.env.fronturl],
+    methods:["GET","POST","PUT","DELETE"],
+    credentials:true,
+  })
+)
 app.use("/images", express.static(path.join(__dirname, "/images")))
 //for accessing build folder
 app.use( express.static(path.join(__dirname, "./frontend/build")))
@@ -88,7 +95,7 @@ app.use("/backend/posts", postRoute);
  app.use("/backend/categories", categoryRoute);
 
 
-app.listen("5000",()=>{
+app.listen(port,()=>{
 
      console.log("backend is running")
 })
