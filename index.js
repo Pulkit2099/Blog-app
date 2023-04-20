@@ -12,7 +12,7 @@ const port =process.env.port||5000
 const cors=require('cors')
 
 const corsOrigin ={
-  origin:'http://localhost:3001', //or whatever port your frontend is using
+  origin:'http://localhost:3000', //or whatever port your frontend is using
   credentials:true,            
   optionSuccessStatus:200
 }
