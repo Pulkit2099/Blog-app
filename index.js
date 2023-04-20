@@ -15,23 +15,17 @@ const port =process.env.port||5000
 
 dotenv.config()
 app.use(express.json())
-app.use(
-  cors({
-    origin:[process.env.fronturl],
-    methods:["GET","POST","PUT","DELETE"],
-    credentials:true,
-  })
-)
-// app.use("/images", express.static(path.join(__dirname, "/images")))
-// //for accessing build folder
-// app.use( express.static(path.join(__dirname, "./frontend/build")))
+app.use(cors())
+
+app.use("/images", express.static(path.join(__dirname, "/images")))
 
 
 
 
-// app.get("*",function(req,res){
-//   res.sendFile(path.join(__dirname,"./frontend/build/index.html"))
-// })
+
+app.get("*",function(req,res){
+  res.sendFile(path.join(__dirname,"./frontend/build/index.html"))
+})
 
 
 
