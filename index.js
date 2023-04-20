@@ -32,13 +32,13 @@ app.use(express.json())
 //   })
 // );
 =======
-app.use(
-  cors({
-   origin: "http://localhost:3001",
-    methods: ["GET", "POST", "PUT", "DELETE"],
-    credentials: false,
-  })
-);
+// app.use(
+//   cors({
+//    origin: "http://localhost:3001",
+//     methods: ["GET", "POST", "PUT", "DELETE"],
+//     credentials: false,
+//   })
+// );
 >>>>>>> 75eaf69aeee401e7d31e4b9167376bbbe2af172a
 app.use("/images", express.static(path.join(__dirname, "/images")))
 
