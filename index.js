@@ -22,16 +22,16 @@ app.use(
     credentials:true,
   })
 )
-app.use("/images", express.static(path.join(__dirname, "/images")))
-//for accessing build folder
-app.use( express.static(path.join(__dirname, "./frontend/build")))
+// app.use("/images", express.static(path.join(__dirname, "/images")))
+// //for accessing build folder
+// app.use( express.static(path.join(__dirname, "./frontend/build")))
 
 
 
 
-app.get("*",function(req,res){
-  res.sendFile(path.join(__dirname,"./frontend/build/index.html"))
-})
+// app.get("*",function(req,res){
+//   res.sendFile(path.join(__dirname,"./frontend/build/index.html"))
+// })
 
 
 
