@@ -73,7 +73,7 @@ const storage = multer.diskStorage({
   });
   
   const upload = multer({ storage: storage });
-  app.post("/backend/upload", upload.single("file"), (req, res) => {
+  app.post("https://blog-app-t4i9.onrender.com/backend/upload", upload.single("file"), (req, res) => {
     res.status(200).json("File has been uploaded");
   });
   
