@@ -16,12 +16,12 @@ const cors=require('cors')
 //   credentials:true,            
 //   optionSuccessStatus:200
 // }
-// app.use(cors(corsOrigin));
+ // app.use(cors(corsOrigin));
 
 
 dotenv.config()
 app.use(express.json())
-// app.use(cors())
+ app.use(cors())
 
 // app.use(
 //   cors({
@@ -58,15 +58,6 @@ mongoose.connect(process.env.mongourl,{
   }).catch((err)=>console.log(err))
   
 
-// mongoose.connect(process.env.mongourl,{
-// //    urlNewParser:true,
-// //    useUnifiedTopology:true,
-// //    useCreateIndex:true
-//   // useFindAndModify:true
-
-// }).then(console.log("connected to mongo")).catch((err)=>{
-//     console.log((err))
-// })
 
 
 
@@ -88,10 +79,17 @@ const storage = multer.diskStorage({
   
 
 
-app.use("./pulkit",(req,res)=>{
-console.log("this is main url")
+app.get("./",(req,res)=>{
 
-})
+  res.setHeader("Access-Control-Allow-Credentials","true");
+
+   res.send("api is running")
+
+  });
+  
+
+
+
 //using authroutes file
 app.use("/backend/auth",authRoute)
 //using userroute file
